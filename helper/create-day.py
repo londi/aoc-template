@@ -19,7 +19,8 @@ with open('session-cookie-template.txt', 'r') as cookie:
         if not no_dl:
             f.write(requests.get(f'https://adventofcode.com/{year}/day/{day}/input', cookies={'session': cookie.read()}).text)
 
-
 shutil.copyfile('template\\parts-template.py', f'..\\code\\{year}\\day{day}\\part1.py')
 shutil.copyfile('template\\parts-template.py', f'..\\code\\{year}\\day{day}\\part2.py')
 shutil.copyfile('template\\runner-template.py', f'..\\code\\{year}\\day{day}\\runner.py')
+
+print(f'Open created day in browser: https://adventofcode.com/{year}/day/{day}')
