@@ -5,7 +5,8 @@ from part2 import main as p2
 
 cwd = os.path.dirname(os.path.realpath(__file__))
 if '\\' in cwd:
-    cwd = cwd.replace('\\', '/')
+      cwd = cwd.replace('\\', '/')
+
 year = cwd.split('/')[-2]
 day = cwd.split('/')[-1].replace('day', '')
 
