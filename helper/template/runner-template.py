@@ -9,7 +9,10 @@ if '\\' in cwd:
 year = cwd.split('/')[-2]
 day = cwd.split('/')[-1].replace('day', '')
 
-results = [p1(), p2()]
+with open(os.path.dirname(os.path.realpath(__file__)) + '\\input.txt', 'r') as input_file:
+      input_text = input_file.read()
+
+results = [p1(input_text), p2(input_text)]
 
 print(f'Year {year}, Day {day}',
       f'------------------------------------',
