@@ -3,7 +3,10 @@ def main(input_text):
     result = 0
     for line in input_text.split('\n')[:-1]:
         levels = [int(level) for level in line.split(' ')]
-        report_checks = [check_report(levels)]
+        if check_report(levels):
+            result += 1
+            continue
+        report_checks = []
         index = 0
         while index < len(levels):
             report_checks.append(check_report(levels[:index] + levels[index + 1:]))
