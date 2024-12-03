@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 from pyparsing import Word, alphas, nums, Suppress, Group, delimitedList, Literal, oneOf, Optional
 
 
@@ -22,7 +23,7 @@ def main(test_input=False):
         for line in input_file:
             results = token_pattern.searchString(line)
             for r in results:
-                print(r)
+                # print(r)
                 token = r[0]
                 if token == 'do':
                     enabled = True
@@ -40,6 +41,7 @@ def calc_mul(elements):
 
 
 if __name__ == '__main__':
-    print(main(False))
+    test = len(sys.argv) > 1 and sys.argv[1] == 't'
+    print(main(test))
     # too high 114961848
     # 106780429 is right

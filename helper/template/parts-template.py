@@ -1,4 +1,5 @@
 import os
+import sys
 import re
 
 def main(test_input=False):
@@ -13,4 +14,5 @@ def main(test_input=False):
 
 
 if __name__ == '__main__':
-    print(main(False))
+    test = len(sys.argv) > 1 and sys.argv[1] == 't'
+    print(main(test))

@@ -1,5 +1,6 @@
 import os
 import re
+import sys
 from pyparsing import Word, alphas, nums, Suppress, Group, delimitedList, Literal, oneOf
 
 
@@ -30,6 +31,7 @@ def calc_mul(elements):
 
 
 if __name__ == '__main__':
-    print(main(False))
+    test = len(sys.argv) > 1 and sys.argv[1] == 't'
+    print(main(test))
     # 225858867 too high
     # 196826776 is right
